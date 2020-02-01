@@ -1,0 +1,29 @@
+{
+  "name": "gulp-sam-template-generator",
+  "version": "1.0.0",
+  "description": "Creates an AWS API-Lambda SAM template from project source",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ReddragonLR/gulp-sam-template-generator.git"
+  },
+  "keywords": [
+    "AWS",
+    "Gulp",
+    "SAM",
+    "generator",
+    "template"
+  ],
+  "author": "Lishen Ramsudh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ReddragonLR/gulp-sam-template-generator/issues"
+  },
+  "homepage": "https://github.com/ReddragonLR/gulp-sam-template-generator#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
