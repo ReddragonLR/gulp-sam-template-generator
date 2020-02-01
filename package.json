@@ -24,6 +24,9 @@
   },
   "homepage": "https://github.com/ReddragonLR/gulp-sam-template-generator#readme",
   "devDependencies": {
-    "gulp": "^4.0.2"
+    "gulp": "^4.0.2",
+    "gulp-json-to-yaml": "0.0.2",
+    "gulp-tap": "^2.0.0",
+    "js-yaml": "^3.13.1"
   }
 }
