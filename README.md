@@ -2,7 +2,7 @@
 Creates an AWS API-Lambda SAM template from project source
 
 Ensure that your functions are named as per the convention:
-<HTTPVERB>Resource
+HTTPVERBResource
 
 Works with the following recommended folder structure
 
