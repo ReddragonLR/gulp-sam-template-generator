@@ -5,25 +5,20 @@ Ensure that your functions are named as per the convention:
 HTTPVERBResource
 
 Works with the following recommended folder structure
-
+```
 +-- gulpfile.js
 +-- config.json (where the config below should live)
-
 +-- functions
-
 |   +-- DELETEResource.js
-
 |   +-- GETResource.js
-
 |   +-- PATCHResource.js
-
 |   +-- POSTResource.js
-
 |   +-- PUTResource.js
-
+```
 
 
 Suggested Config
+```
 {
     "APIResourceTemplate":
     {
@@ -48,3 +43,4 @@ Suggested Config
     },
     "FunctionsFolderPath": "./TestFunctions"
 }
+```
