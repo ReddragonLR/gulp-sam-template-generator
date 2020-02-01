@@ -15,7 +15,8 @@ Works with the following recommended folder structure
 |   +-- POSTResource.js
 |   +-- PUTResource.js
 ```
-
+# Usage
+For now, simply copy the gulpfile.js and config.json into you project until I convert this into a proper NPM Gulp-Plugin Module
 
 Suggested Config
 ```
