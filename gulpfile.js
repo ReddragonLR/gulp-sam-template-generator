@@ -42,7 +42,7 @@ function camelCase(str) {
 }
 
 function updateResources(){
-    return src('./functions/*.js')
+    return src(`'./${CONFIG.FunctionsFolderPath}/*.js'`)
             .pipe(tap(function(file){
                 updateTemplate(path.parse(file.path).name);
             }));
