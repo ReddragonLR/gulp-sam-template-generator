@@ -5,10 +5,17 @@ Ensure that your functions are named as per the convention:
 <HTTPVERB>Resource
 
 Works with the following recommended folder structure
+
 +-- gulpfile.js
+
 +-- functions
+
 |   +-- DELETEResource.js
+
 |   +-- GETResource.js
+
 |   +-- PATCHResource.js
+
 |   +-- POSTResource.js
+
 |   +-- PUTResource.js
