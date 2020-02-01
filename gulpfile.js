@@ -7,6 +7,8 @@ const CONFIG = require('./config.json');
 var template = {};
 var resources = {};
 
+// Consts
+const PLUGIN_NAME = 'gulp-sam-template-generator';
 
 function updateTemplate(fileName){
     var lambda = {};

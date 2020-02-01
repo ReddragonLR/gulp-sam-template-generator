@@ -2,9 +2,8 @@
   "name": "gulp-sam-template-generator",
   "version": "1.0.0",
   "description": "Creates an AWS API-Lambda SAM template from project source",
-  "main": "index.js",
+  "main": "gulpfile.js",
   "scripts": {
-    "test": "test"
   },
   "repository": {
     "type": "git",
@@ -15,7 +14,8 @@
     "Gulp",
     "SAM",
     "generator",
-    "template"
+    "template",
+    "gulpplugin"
   ],
   "author": "Lishen Ramsudh",
   "license": "MIT",
