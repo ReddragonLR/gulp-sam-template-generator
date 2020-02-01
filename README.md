@@ -52,7 +52,7 @@ Suggested Config
     "FunctionsFolderPath": "./TestFunctions"
 }
 ```
-#Post template.yaml generation
+# Post template.yaml generation
 Once Gulp has generated your template file then perform the following:
 ```
 aws cloudformation package --template-file template.yaml --output-file-template sam-template.yaml --s3-bucket <your deployment bucket name>
