@@ -4,15 +4,29 @@ const path = require('path');
 const fs = require('fs');
 const jsonToYaml = require('gulp-json-to-yaml');
 const CONFIG = require('./config.json');
-var resources = [];
 var template = {};
+var resources = {};
+
 
 function updateTemplate(fileName){
+    var lambda = {};
+    var lambdaProps = {};
+    var lambdaEvents = {};
+    var lambdaEvent = {};
+    var lambdaEventProps = {};
+
     var httpVerb = extractHttpVerb(fileName);
     var resourceName = extractResourceName(fileName, httpVerb);
-    var resourceString = JSON.stringify(CONFIG.APIResourceTemplate);
-    resourceString = resourceString.replace(/<ResourceFileName>/gi, fileName).replace(/<ResourceName>/gi, resourceName).replace(/<HttpVerb>/gi, httpVerb);
-    resources.push(resourceString);
+    lambdaEventProps["Path"] = `/${resourceName}`;
+    lambdaEventProps["Method"] = httpVerb;
+    lambdaEvent["Type"] = CONFIG.APIResourceTemplate.LambdaTrigger;
+    lambdaEvent["Properties"] = {...lambdaEventProps};
+    lambdaEvents[fileName] = {...lambdaEvent};
+    lambdaProps["Handler"] = `${fileName}.handler`;
+    lambdaProps["Events"] = {...lambdaEvents};
+    lambda["Type"] = CONFIG.APIResourceTemplate.AWSLambdaName;
+    lambda["Properties"] = {...lambdaProps};
+    resources[fileName] = {...lambda};
 }
 
 function extractHttpVerb(fileName){
@@ -42,16 +56,15 @@ function camelCase(str) {
 }
 
 function updateResources(){
-    return src(`'./${CONFIG.FunctionsFolderPath}/*.js'`)
+    return src(`./${CONFIG.FunctionsFolderPath}/*.js`)
             .pipe(tap(function(file){
                 updateTemplate(path.parse(file.path).name);
             }));
 }
 
 function generateTemplate(cb){
-    var temp = CONFIG.AWSMainTemplate;
-    template = {...temp};
-    template.Resources = [...resources];
+    template = {...CONFIG.AWSMainTemplate};
+    template.Resources = {...resources};
     cb();
 }
 

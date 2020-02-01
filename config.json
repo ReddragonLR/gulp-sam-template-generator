@@ -1,26 +1,9 @@
 {
-    "APIResourceTemplate":{
-    "<ResourceName>":
+    "APIResourceTemplate":
     {
-        "Type": "AWS::Serverless::Function",
-        "Properties": 
-        {
-            "Handler": "<ResourceFileName>.handler",
-            "Events":
-            {
-                "<ResourceFileName>":
-                {
-                    "Type": "Api",
-                    "Properties":
-                    {
-                        "Path": "/<ResourceName>",
-                        "Method": "<HttpVerb>"
-                    }
-                }
-            }
-        }
-    }
-  },
+        "AWSLambdaName": "AWS::Serverless::Function",
+        "LambdaTrigger": "Api"
+    },
     "AWSMainTemplate": 
     {
         "AWSTemplateFormatVersion": "2010-09-09",
@@ -35,7 +18,7 @@
                 "Timeout": 5
             }
         },
-        "Resources":[]
+        "Resources":{}
     },
     "FunctionsFolderPath": "./TestFunctions"
 }

@@ -1,8 +1,8 @@
 exports.handler = async (event) => {
     return {
-        statusCode: 201,
+        statusCode: 200,
         body: JSON.stringify({
-            result: {}
+            result: 'DELETE'
         })
     }
 }
