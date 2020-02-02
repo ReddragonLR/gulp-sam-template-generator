@@ -57,6 +57,11 @@ Once Gulp has generated your template file then perform the following:
 ```
 aws cloudformation package --template-file template.yaml --output-template-file sam-template.yaml --s3-bucket <your deployment bucket name>
 ```
-This will provide you with a cloudformation script that you can use to deploy your serverless stack.
+This will provide you with a cloudformation script that you can use to deploy your serverless stack. Then you the following to deploy your stack
+
+```
+aws cloudformation deploy --template-file sam-template.yaml --stack-name <YOUR STACK NAME> --capabilities CAPABILITY_IAM
+```
+The ```capabilities``` section add the required roles to your stack as well. Should you need to remove your stack then everything associated with the stack is removed as well. This makes for a clean sweep if need be.
 
 Happy hacking...
