@@ -49,7 +49,7 @@ Suggested Config
         },
         "Resources":{}
     },
-    "FunctionsFolderPath": "./TestFunctions"
+    "FunctionsFolderPath": "./functions"
 }
 ```
 # Post template.yaml generation
