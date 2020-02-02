@@ -8,7 +8,7 @@ Works with the following recommended folder structure
 ```
 +-- gulpfile.js
 +-- config.json (where the config below should live)
-+-- functions
++-- functions (FunctionsFolderPath in config.js will determine the folder name here)
 |   +-- DELETEResource.js
 |   +-- GETResource.js
 |   +-- PATCHResource.js
