@@ -5,25 +5,28 @@ Ensure that your functions are named as per the convention:
 HTTPVERBResource
 
 Works with the following recommended folder structure
-
+```
 +-- gulpfile.js
 +-- config.json (where the config below should live)
-
 +-- functions
-
 |   +-- DELETEResource.js
-
 |   +-- GETResource.js
-
 |   +-- PATCHResource.js
-
 |   +-- POSTResource.js
-
 |   +-- PUTResource.js
+```
 
+It's important to note that this gulpfile relies on naming conventions. Your functions themselves must all export handler named handler:
 
+```
+exports.handler
+```
+
+# Usage
+For now, simply copy the gulpfile.js and config.json into you project until I convert this into a proper NPM Gulp-Plugin Module
 
 Suggested Config
+```
 {
     "APIResourceTemplate":
     {
@@ -48,3 +51,12 @@ Suggested Config
     },
     "FunctionsFolderPath": "./TestFunctions"
 }
+```
+# Post template.yaml generation
+Once Gulp has generated your template file then perform the following:
+```
+aws cloudformation package --template-file template.yaml --output-template-file sam-template.yaml --s3-bucket <your deployment bucket name>
+```
+This will provide you with a cloudformation script that you can use to deploy your serverless stack.
+
+Happy hacking...
