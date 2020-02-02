@@ -24,7 +24,7 @@ function updateTemplate(fileName){
     lambdaEvent["Type"] = CONFIG.APIResourceTemplate.LambdaTrigger;
     lambdaEvent["Properties"] = {...lambdaEventProps};
     lambdaEvents[fileName] = {...lambdaEvent};
-    lambdaProps["Handler"] = `./functions/${fileName}.handler`;
+    lambdaProps["Handler"] = `${CONFIG.FunctionsFolderPath}/${fileName}.handler`;
     lambdaProps["Policies"] = CONFIG.APIResourceTemplate.LambdaDynamoDBPolicy;
     lambdaProps["Events"] = {...lambdaEvents};
     lambda["Type"] = CONFIG.APIResourceTemplate.AWSLambdaName;
