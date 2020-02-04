@@ -31,7 +31,8 @@ Suggested Config
     "APIResourceTemplate":
     {
         "AWSLambdaName": "AWS::Serverless::Function",
-        "LambdaTrigger": "Api"
+        "LambdaTrigger": "Api",
+        "LambdaDynamoDBPolicy": "AmazonDynamoDBReadOnlyAccess"
     },
     "AWSMainTemplate": 
     {
