@@ -3,7 +3,7 @@
     {
         "AWSLambdaName": "AWS::Serverless::Function",
         "LambdaTrigger": "Api",
-        "LambdaDynamoDBPolicy": "AWSLambdaDynamoDBExecutionRole"
+        "LambdaDynamoDBPolicy": "AmazonDynamoDBReadOnlyAccess"
     },
     "AWSMainTemplate": 
     {
