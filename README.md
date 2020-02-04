@@ -43,7 +43,7 @@ Suggested Config
             "Function":
             {
                 "MemorySize": 128,
-                "Runtime": "nodejs8.10",
+                "Runtime": "nodejs12.x",
                 "Timeout": 5
             }
         },
